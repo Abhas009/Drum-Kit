@@ -10,12 +10,14 @@ for(var i = 0; i < numberOfDrumButtons; i++) {
 function handleClick() {
     var clickButton = this.innerHTML;
     makenoise(clickButton);
+    buttonanimation(clickButton);    
 }
 
 // Add event listener for keydown event
 document.addEventListener("keydown", function(event) {   //here event inside the function is just a parameter, you can write it or not, it will not affect our code* .
     var key = event.key;
     makenoise(key);
+    buttonanimation(key);
 });
 
 // Function to play sound based on key/button clicked
@@ -57,6 +59,20 @@ function makenoise(key) {
             break;
     }
 }
+
+
+//Set Timout - When we pressed the button it animated and turn it back, animation are done in style.css (.pressed class)
+function buttonanimation(key)
+{
+    var currentKey = document.querySelector("." + key);
+    currentKey.classList.add("pressed");
+
+    setTimeout(() => {
+      currentKey.classList.remove("pressed");
+    }, 100);
+}
+
+
 
 // Other commented-out parts of your code
 /*
