@@ -14,7 +14,7 @@ function handleClick() {
 }
 
 // Add event listener for keydown event
-document.addEventListener("keydown", function(event) {   //here event inside the function is just a parameter, you can write it or not, it will not affect our code* .
+document.addEventListener("keydown", function(event) {   //here event inside the function is just a parameter.
     var key = event.key;
     makenoise(key);
     buttonanimation(key);
